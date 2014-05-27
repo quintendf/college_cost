@@ -1,0 +1,23 @@
+<h1>Calculate your cost</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@student) do |f| %>
+
+		<%= f.label :scholarships %>
+		<%= f.text_field :scholarships %>
+
+		<%= f.label :contribution %>
+		<%= f.text_field :contribution %>
+
+		<%= f.label :college %>
+		<%= f.select :college, [['Columbia University in the City of New York','Columbia University in the City of New York']] %>
+
+		<%= f.label :major %>
+		<%= f.select :major, [['Computer Science','computer science'],['Art History','art history'],['Finance','finance']] %>
+
+		<%= f.submit "Calculate my debt", class: "btn btn-large btn-primary" %>
+
+		<% end %>
+	</div>
+</div>

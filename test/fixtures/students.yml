@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  college: MyString
+  major: MyString
+  cost: 1
+  scholarships: 9.99
+  contribution: 9.99
+
+two:
+  college: MyString
+  major: MyString
+  cost: 1
+  scholarships: 9.99
+  contribution: 9.99
