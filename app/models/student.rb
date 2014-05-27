@@ -9,14 +9,6 @@ class Student < ActiveRecord::Base
 		self.monthly_cost = calc_monthly
 	end
 
-	def college_name
-		price.try(:college)
-	end
-
-	def college_name=(college)
-		self.college = Price.where(college: college).pluck(:college).at(0) if college.present?
-	end
-
 	def find_cost
 		@cost = Price.where(college: self.college).pluck(:price).at(0)
 	end
@@ -42,5 +34,6 @@ class Student < ActiveRecord::Base
 	 
 	  # Calc the monthly payment.
 	  pmt = n / d
+	  pmt = pmt.to_i
 	end
 end

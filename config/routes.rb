@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :students
+  resources :students do
+    get :autocomplete_price_college, :on => :collection
+    get :autocomplete_salary_major, :on => :collection
+  end
+
   resources :prices
 
   root to: 'students#new'

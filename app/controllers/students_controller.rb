@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+  autocomplete :price, :college
+  autocomplete :salary, :major
+  
 	def new 
   		@student = Student.new
   	end
