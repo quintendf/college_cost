@@ -7,10 +7,14 @@ class StudentsController < ApplicationController
   		Student.create(student_params)
   	end
 
+    def form_complete?
+      if @student.monthly_cost
+      end
+    end
+
   private
 
   def student_params
     params.require(:student).permit(:college, :major, :cost, :scholarships, :cost, :contribution)
   end
-
 end

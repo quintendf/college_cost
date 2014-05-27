@@ -11,7 +11,7 @@
 		<%= f.text_field :contribution %>
 
 		<%= f.label :college %>
-		<%= f.select :college, [['Columbia University in the City of New York','Columbia University in the City of New York']] %>
+		<%= f.text_field :college %>
 
 		<%= f.label :major %>
 		<%= f.select :major, [['Computer Science (CS)','Computer Science (CS)'],['Art History','art history'],['Finance','finance']] %>
@@ -21,3 +21,8 @@
 		<% end %>
 	</div>
 </div>
+
+<div>
+	<% if @student.monthly_cost? %>
+	<h2>Calculated</h2>
+	<%end%>
