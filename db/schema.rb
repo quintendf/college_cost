@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527031946) do
+ActiveRecord::Schema.define(version: 20140527042122) do
 
   create_table "prices", force: true do |t|
     t.string   "college"
     t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "salaries", force: true do |t|
+    t.string   "major"
+    t.decimal  "starting_salary"
+    t.decimal  "mid_career_salary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
