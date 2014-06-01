@@ -3,6 +3,7 @@ class Student < ActiveRecord::Base
 	after_initialize :init 
 	belongs_to :price
 
+
 	def init
 		self.yearly_cost = find_cost
 		self.monthly_salary = find_salary
