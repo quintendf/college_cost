@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   	end
 
   	def create 
-  		Student.create(student_params)
+  		@student = Student.create(student_params)
   	end
 
     def form_complete?

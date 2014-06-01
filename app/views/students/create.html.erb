@@ -1,0 +1,83 @@
+<div class="navbar navbar-default navbar-static-top">
+    <style>
+      .body{padding-top:70px}
+    </style>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">StudyFund</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Your Student Debt Report Card:</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+
+      </div>
+    </div>
+    <div class="row">
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-12" draggable="true">
+        <div class="well">
+          <h2>Your Grade: <%=@student.grade %></h2>
+          <p> <%= @student.explainer_text[0] %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="well">
+          <h2>Estimated Debt at Graduation: <%=number_to_currency(@student.total_debt) %></h2>
+          <a class="btn btn-primary"data-toggle="collapse" data-target="#debtdetails">Learn More</a>
+          <p class="collapse" id="debtdetails">
+          	<%= @student.explainer_text[1] %>
+          	<br>
+          	<br>
+          	To estimate this, we used the college savings information you provided, and compared it to your University's published average net price. Net price is the average cost of attendance once grants and scholarships are factored in for students. <a href="http://studentnpc.collegeboard.org/what-is-a-net-price-calculator">Click here to learn more about net price.</a></p>
+        </div>
+        <div class="well">
+          <h2>Expected Starting Salary: <%=number_to_currency(@student.monthly_salary * 12)%></h2>
+          <a class="btn btn-primary"data-toggle="collapse" data-target="#salarydetails">Learn More</a>
+          <p class="collapse" id="salarydetails">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="well">
+          <h2>Estimated Monthly Loan Payment: <%=number_to_currency(@student.monthly_cost) %></h2>
+          <a class="btn btn-primary"data-toggle="collapse" data-target="#monthly_costdetails">Learn More</a>
+          <p class="collapse" id="monthly_costdetails">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+        <div class="well">
+          <h2>Estimated Monthly Take-Home Pay: <%=number_to_currency(@student.monthly_salary * 0.66)%></h2>
+          <a class="btn btn-primary"data-toggle="collapse" data-target="#monthly_salarydetails">Learn More</a>
+          <p class="collapse" id="monthly_salarydetails">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,25 +1,63 @@
-<h1>Calculate your cost</h1>
-
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@student) do |f| %>
-
-		<%= f.label :contribution %>
-		<%= f.text_field :contribution %>
-
-		<%= f.label :college %>
-		<%= f.autocomplete_field :college, autocomplete_price_college_students_path %>
-
-		<%= f.label :major %>
-		<%= f.autocomplete_field :major, autocomplete_salary_major_students_path %>
-
-		<%= f.submit "Calculate my debt", class: "btn btn-large btn-primary" %>
-
-		<% end %>
-	</div>
-</div>
-
-<div>
-	<% if @student.monthly_cost? %>
-	<h2>Calculated</h2>
-	<%end%>
+  <div class="navbar navbar-default navbar-static-top">
+    <style>
+      .body{padding-top:70px}
+    </style>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">StudyFund</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h1>What's Your Number?</h1>
+          <p>College debt shouldn't be a surprise. Get an estimate of your student loans before you enroll, and find out if your intended major will let you pay off your debt.&nbsp;
+            <br>
+            <br>Get started by answering 3 quick questions:</p>
+        </div>
+      </div>
+    </div>
+      <div class="col-md-8">
+      	<%= form_for(@student) do |f| %>
+        <form role="form">
+          <div class="form-group">
+          	<label for="contribution">How much money do you and your family have saved for college?</label>
+			<%= f.text_field :contribution %>
+          </div>
+          <div class="form-group">
+			<label for="college">What college are you planning to attend?</label>
+			<%= f.autocomplete_field :college, autocomplete_price_college_students_path %>
+          </div>
+          <div class="form-group">
+			<label for="college">What do you want to major in?</label>
+			<%= f.autocomplete_field :major, autocomplete_salary_major_students_path %>
+          </div>
+          <div>
+          	<%= f.submit "Calculate my debt", class: "btn btn-large btn-primary" %>
+          	<% end %>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
