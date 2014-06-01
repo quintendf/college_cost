@@ -7,7 +7,7 @@ namespace :csv do
 
     require 'csv'
 
-    csv_file_path = '/Users/qf/Downloads/price_data.csv'
+    csv_file_path = 'lib/assets/price_data.csv'
 
     CSV.foreach(csv_file_path, headers: true) do |row|
       row = Price.create!({
@@ -21,7 +21,7 @@ namespace :csv do
 
     require 'csv'
 
-    csv_file_path = '/Users/qf/Downloads/salary_data.csv'
+    csv_file_path = 'lib/assets/salary_data.csv'
 
     CSV.foreach(csv_file_path, headers: true) do |row|
       row = Salary.create!({
