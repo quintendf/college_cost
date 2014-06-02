@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531224556) do
+ActiveRecord::Schema.define(version: 20140602134651) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "prices", force: true do |t|
     t.string   "college"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140531224556) do
   end
 
   create_table "students", force: true do |t|
-    t.string   "college"
-    t.string   "major"
+    t.text     "college"
+    t.text     "major"
     t.decimal  "scholarships"
     t.decimal  "contribution"
     t.decimal  "yearly_cost"
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20140531224556) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "price_id"
-    t.string   "grade"
-    t.string   "explainer_text"
+    t.text     "grade"
+    t.text     "explainer_text"
   end
 
 end

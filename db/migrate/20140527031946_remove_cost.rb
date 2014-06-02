@@ -1,6 +1,5 @@
 class RemoveCost < ActiveRecord::Migration
     def change
-    drop_table :costs
   	drop_table :students
 
     create_table :students do |t|

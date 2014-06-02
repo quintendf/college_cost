@@ -61,22 +61,22 @@ class Student < ActiveRecord::Base
 
 		if grade == "A"
 			str = "Your expected college debt of $" + @debt.to_s + " will be manageable on your expected starting 
-			annual salary of $" + @salary.to_s + ". See below for more details on your grade, and suggestions on 
+			annual salary of $" + (@salary * 12).to_s + ". See below for more details on your grade, and suggestions on 
 			how you might do even better."
 			array.push str
 		elsif grade == "B"
 			str = "Your expected college debt of $" + @debt.to_s + " will be reasonably manageable on your expected starting 
-			annual salary of $" + @salary.to_s + ". You may be able to find a more affordable college - see below for more 
+			annual salary of $" + (@salary * 12).to_s + ". You may be able to find a more affordable college - see below for more 
 			information and suggestions."
 			array.push str
 		elsif grade == "C"
 			str = "Your expected college debt of $" + @debt.to_s + " will be tough to repay on your expected starting 
-			annual salary of $" + @salary.to_s + ". Below, we give you a few recommendations for ways to save money and make 
+			annual salary of $" + (@salary * 12).to_s  + ". Below, we give you a few recommendations for ways to save money and make 
 			your student loans more affordable."
 			array.push str
 		elsif grade == "D"
 			str = "Your expected college debt of $" + @debt.to_s + " will be very difficult to repay on your estimated 
-			annual salary of $" + @salary.to_s + ". The good news is that there's lots of ways to make college loans more 
+			annual salary of $" + (@salary * 12).to_s  + ". The good news is that there's lots of ways to make college loans more 
 			affordable - see below for some different options that might help."
 			array.push str
 		elsif grade == "F"
