@@ -1,28 +1,10 @@
-== README
+Simple app designed to help students better understand the cost of college. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Most college cost calculators are extremely complicated, requiring you to input a wide variety of tax, income, and scholarship information.
 
-Things you may want to cover:
+I used open datasets on average cost of attendance and expected income of certain majors post-graduation. I wanted to give students a quick look at their estimated debt at graduation, and their likely ability to repay that debt. 
 
-* Ruby version
+I also provide "grades" with recommendations to help high school students make better decisions about where they go in the first place. 
 
-* System dependencies
+I plan to refine the app visually before turning it over to a nonprofit or other group working on college affordability and cost transparency. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
